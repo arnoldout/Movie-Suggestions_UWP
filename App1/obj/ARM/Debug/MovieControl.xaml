@@ -19,7 +19,7 @@
                     <ColumnDefinition Width="5*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0">
-                    <Image x:ConnectionId='6' x:Name="iPoster" Stretch="Fill" Source="{Binding ImageSource, ElementName=userControl}"/>
+                    <Image x:ConnectionId='6' x:Name="iPoster" Stretch="Uniform" Source="{Binding ImageSource, ElementName=userControl}"/>
                 </Grid>
                 <Grid Grid.Column="1" >
                     <Grid.RowDefinitions>
