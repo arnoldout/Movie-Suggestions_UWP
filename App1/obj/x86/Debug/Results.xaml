@@ -17,9 +17,11 @@
             </Grid.Background>
         </Grid>
         <Grid >
-            <Pivot x:ConnectionId='1' Title="Results" x:Name="pivoter">
+
+            <ProgressRing x:ConnectionId='1' HorizontalAlignment="Center" x:Name="pBarResultPage" Height="50"  Width="50" VerticalAlignment="Center" Foreground="Black"/>
+            <Pivot x:ConnectionId='2' Title="Results" Foreground="White" HorizontalAlignment="Center" x:Name="pivoter">
             </Pivot>
-            <Button x:ConnectionId='2' x:Name="button" Content="Back" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"                     >
+            <Button x:ConnectionId='3' x:Name="button" Content="Back" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"                     >
                 <Button.Background>
                     <SolidColorBrush Color="{ThemeResource SystemAltHighColor}"/>
                 </Button.Background>

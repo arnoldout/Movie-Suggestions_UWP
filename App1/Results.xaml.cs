@@ -7,8 +7,10 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
@@ -30,13 +32,10 @@ namespace App1
         }
         protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
+            pBarResultPage.IsActive = true;
             int rows;
             await makeGETRequest();
             MovieControl mc;
-            /*for (rows = 0; rows < results.Count; rows++)
-            {
-                //contentGrid.RowDefinitions.Add(new RowDefinition());
-            }*/
             PivotItem p;
             for (rows = 0; rows < results.Count; rows++)
             {
@@ -52,9 +51,11 @@ namespace App1
                 mc.HorizontalAlignment = HorizontalAlignment.Stretch;
                 p = new PivotItem();    
                 p.Header = results[rows].Title;
+                p.Foreground = new SolidColorBrush(Colors.White);
                 pivoter.Items.Add(p);
                 p.Content = mc;
             }
+            pBarResultPage.IsActive = false;
         }
 
         public async Task makeGETRequest()

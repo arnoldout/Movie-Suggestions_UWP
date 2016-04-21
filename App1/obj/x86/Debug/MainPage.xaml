@@ -25,11 +25,11 @@
                 <ColumnDefinition Width="5*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0" >
-                <TextBox x:ConnectionId='5' x:Name="tbID" HorizontalAlignment="Center" TextWrapping="Wrap" Text="ID:" VerticalAlignment="Bottom"                                    Width="84" Background="{ThemeResource AppBarItemPressedForegroundThemeBrush}" SelectionHighlightColor="{ThemeResource AppBarBorderThemeBrush}"                         />
+                <TextBox x:ConnectionId='6' x:Name="tbID" HorizontalAlignment="Center" TextWrapping="Wrap" Text="ID:" VerticalAlignment="Bottom"                                    Width="84" Background="{ThemeResource AppBarItemPressedForegroundThemeBrush}" SelectionHighlightColor="{ThemeResource AppBarBorderThemeBrush}"                         />
             </Grid>
             <Grid Grid.Column="1">
 
-                <Button x:ConnectionId='4' x:Name="btnID" Content="Suggest" HorizontalAlignment="Center" VerticalAlignment="Bottom"                     RenderTransformOrigin="-2.496,0.495" Background="{ThemeResource AppBarBorderThemeBrush}"/>
+                <Button x:ConnectionId='5' x:Name="btnID" Content="Suggest" HorizontalAlignment="Center" VerticalAlignment="Bottom"                     RenderTransformOrigin="-2.496,0.495" Background="{ThemeResource AppBarBorderThemeBrush}"/>
 
             </Grid>
         </Grid>
@@ -39,15 +39,16 @@
                 <ColumnDefinition Width="3*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
-                <TextBox x:ConnectionId='3' x:Name="tbName" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Name: " VerticalAlignment="Center"                                   Width="98" SelectionHighlightColor="{ThemeResource AppBarBorderThemeBrush}"                           />
+                <TextBox x:ConnectionId='4' x:Name="tbName" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Name: " VerticalAlignment="Center"                                   Width="98" SelectionHighlightColor="{ThemeResource AppBarBorderThemeBrush}"                           />
             </Grid>
             <Grid Grid.Column="1">
-                <Button x:ConnectionId='2' x:Name="btnName" Content="Search" HorizontalAlignment="Center" VerticalAlignment="Center"                      RenderTransformOrigin="-2.496,0.495" Background="{ThemeResource AppBarBorderThemeBrush}" />
+                <Button x:ConnectionId='3' x:Name="btnName" Content="Search" HorizontalAlignment="Center" VerticalAlignment="Center"                      RenderTransformOrigin="-2.496,0.495" Background="{ThemeResource AppBarBorderThemeBrush}" />
             </Grid>
-            <ComboBox x:ConnectionId='1' x:Name="ddlName" RelativePanel.Below="tbName" HorizontalAlignment="Center" VerticalAlignment="Top" Width="108"  Visibility="Collapsed"                                            />
+            
         </Grid>
         <Grid Grid.Row="2">
-            <ProgressRing HorizontalAlignment="Center"   VerticalAlignment="Top"/>
+            <ComboBox x:ConnectionId='1' x:Name="ddlName" RelativePanel.Below="tbName" HorizontalAlignment="Center" VerticalAlignment="Top" Width="108"  Visibility="Collapsed"                                            />
+            <ProgressRing x:ConnectionId='2' HorizontalAlignment="Center" x:Name="pBarMainPage" Height="50"  Width="50" VerticalAlignment="Top" Foreground="Black"/>
         </Grid>
     </Grid>
 </Page>

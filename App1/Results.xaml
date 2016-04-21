@@ -17,7 +17,9 @@
             </Grid.Background>
         </Grid>
         <Grid >
-            <Pivot Title="Results" x:Name="pivoter">
+
+            <ProgressRing HorizontalAlignment="Center" x:Name="pBarResultPage" Height="50"  Width="50" VerticalAlignment="Center" Foreground="Black"/>
+            <Pivot Title="Results" Foreground="White" HorizontalAlignment="Center" x:Name="pivoter">
             </Pivot>
             <Button x:Name="button" Content="Back" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Click="button_Click">
                 <Button.Background>

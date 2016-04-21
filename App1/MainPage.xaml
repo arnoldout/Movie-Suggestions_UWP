@@ -44,10 +44,11 @@
             <Grid Grid.Column="1">
                 <Button x:Name="btnName" Content="Search" HorizontalAlignment="Center" VerticalAlignment="Center" Click="button_Click" RenderTransformOrigin="-2.496,0.495" Background="{ThemeResource AppBarBorderThemeBrush}" />
             </Grid>
-            <ComboBox x:Name="ddlName" RelativePanel.Below="tbName" HorizontalAlignment="Center" VerticalAlignment="Top" Width="108"  Visibility="Collapsed" SelectionChanged="ddlName_SelectionChanged"/>
+            
         </Grid>
         <Grid Grid.Row="2">
-            <ProgressRing HorizontalAlignment="Center"   VerticalAlignment="Top"/>
+            <ComboBox x:Name="ddlName" RelativePanel.Below="tbName" HorizontalAlignment="Center" VerticalAlignment="Top" Width="108"  Visibility="Collapsed" SelectionChanged="ddlName_SelectionChanged"/>
+            <ProgressRing HorizontalAlignment="Center" x:Name="pBarMainPage" Height="50"  Width="50" VerticalAlignment="Top" Foreground="Black"/>
         </Grid>
     </Grid>
 </Page>

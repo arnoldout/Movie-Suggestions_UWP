@@ -19,7 +19,7 @@
                     <ColumnDefinition Width="5*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0">
-                    <Image x:ConnectionId='6' x:Name="iPoster" Stretch="Uniform" Source="{Binding ImageSource, ElementName=userControl}"/>
+                    <Image x:ConnectionId='6' x:Name="iPoster" Stretch="Uniform" Source="{Binding ImageSource, ElementName=userControl}" VerticalAlignment="Center"/>
                 </Grid>
                 <Grid Grid.Column="1" >
                     <Grid.RowDefinitions>
@@ -36,9 +36,11 @@
                             <TextBlock x:ConnectionId='5' x:Name="textBlock" HorizontalAlignment="Center" TextWrapping="Wrap" Text="OVERVIEW" VerticalAlignment="Bottom" FontWeight="Bold"/>
                         </Grid>
                         <Grid Grid.Row="1">
-                            <Border Padding="5,0" >
-                                <TextBlock x:ConnectionId='4' x:Name="tbOverview" VerticalAlignment="Top"  TextWrapping="Wrap" Text="{Binding textBlockOverview, ElementName=userControl}" HorizontalAlignment="Stretch"></TextBlock>
-                            </Border>
+                            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                                <Border Padding="5,0" >     
+                                    <TextBlock x:ConnectionId='4' x:Name="tbOverview" VerticalAlignment="Top"  TextWrapping="Wrap" Text="{Binding textBlockOverview, ElementName=userControl}" HorizontalAlignment="Stretch"></TextBlock>
+                                </Border>
+                            </ScrollViewer>
                         </Grid>
                     </Grid>
                     <Grid Grid.Row="1">
@@ -47,7 +49,7 @@
                             <RowDefinition></RowDefinition>
                         </Grid.RowDefinitions>
                         <Grid Grid.Row="0">
-                            <TextBlock VerticalAlignment="Bottom" FontWeight="Bold">Rating</TextBlock>
+                            <TextBlock VerticalAlignment="Bottom" FontWeight="Bold" HorizontalAlignment="Center">Movie Facts: </TextBlock>
                         </Grid>
                         <Grid Grid.Row="1">
                             <Grid.ColumnDefinitions>
