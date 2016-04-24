@@ -25,7 +25,8 @@
                 <ColumnDefinition Width="5*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0" >
-                <TextBox x:Name="tbID" HorizontalAlignment="Center" TextWrapping="Wrap" Text="ID:" VerticalAlignment="Bottom"  TextChanged="textBox_TextChanged" Width="84" Background="{ThemeResource AppBarItemPressedForegroundThemeBrush}" SelectionHighlightColor="{ThemeResource AppBarBorderThemeBrush}" GotFocus="tbID_GotFocus"/>
+                <TextBlock HorizontalAlignment="Center"  VerticalAlignment="Center">Enter ID:</TextBlock>
+                <TextBox x:Name="tbID" HorizontalAlignment="Center" TextWrapping="Wrap" Text="ID:" VerticalAlignment="Bottom"  TextChanged="textBox_TextChanged" Width="84" Background="{ThemeResource AppBarItemPressedForegroundThemeBrush}" SelectionHighlightColor="{ThemeResource AppBarBorderThemeBrush}" GotFocus="tbName_GotFocus"/>
             </Grid>
             <Grid Grid.Column="1">
 
@@ -39,6 +40,7 @@
                 <ColumnDefinition Width="3*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top">Enter Movie Name: </TextBlock>
                 <TextBox x:Name="tbName" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Name: " VerticalAlignment="Center" TextChanged="textBox_TextChanged" Width="98" SelectionHighlightColor="{ThemeResource AppBarBorderThemeBrush}" GotFocus="tbName_GotFocus"/>
             </Grid>
             <Grid Grid.Column="1">
