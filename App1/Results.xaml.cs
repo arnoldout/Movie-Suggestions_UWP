@@ -52,30 +52,37 @@ namespace App1
                 p = new PivotItem();    
                 p.Header = results[rows].Title;
                 p.Foreground = new SolidColorBrush(Colors.White);
-                pivoter.Items.Add(p);
                 p.Content = mc;
+                pivoter.Items.Add(p);
             }
             pBarResultPage.IsActive = false;
         }
 
         public async Task makeGETRequest()
         {
-            string uri = "https://matchingsocks.herokuapp.com/request/movie/" + App.searchID;
+            string uri = "http://localhost:4567/request/movie/" + App.searchID;
             WebRequest wrGETURL = WebRequest.Create(uri);
             wrGETURL.Proxy = null;
-            WebResponse response = await wrGETURL.GetResponseAsync();
-            Stream dataStream = response.GetResponseStream();
-            StreamReader objReader = new StreamReader(dataStream);
-            dynamic movie = JsonConvert.DeserializeObject(objReader.ReadToEnd());
-            results = new List<Movie>();
-            StringBuilder sb = new StringBuilder();
-            foreach (dynamic results in movie)
+            try
             {
-                this.results.Add(new Movie((int)results.id, System.Convert.ToString(results.poster_path), System.Convert.ToString(results.title), System.Convert.ToString(results.overview), System.Convert.ToString(results.release_date), System.Convert.ToString(results.vote_average), System.Convert.ToString(results.backdrop_path)));
-                sb.Append(Convert.ToString(results.title) + "\n");
+                WebResponse response = await wrGETURL.GetResponseAsync();
+                Stream dataStream = response.GetResponseStream();
+                StreamReader objReader = new StreamReader(dataStream);
+                dynamic movie = JsonConvert.DeserializeObject(objReader.ReadToEnd());
+                results = new List<Movie>();
+                foreach (dynamic results in movie)
+                {
+                    this.results.Add(new Movie((int)results.id, System.Convert.ToString(results.poster_path), System.Convert.ToString(results.title), System.Convert.ToString(results.overview), System.Convert.ToString(results.release_date), System.Convert.ToString(results.vote_average), System.Convert.ToString(results.backdrop_path), (int)results.Score));
+                }
+                results = results.OrderByDescending(m => m.SuggestionScore).ToList();
+                response.Dispose();
             }
-            results = results.OrderByDescending(m => m.VoteAvg).ToList();
-            response.Dispose();
+            catch (WebException ex)
+            {
+                App.errorMsg = "Server Error\nPlease try again";
+                this.Frame.Navigate(typeof(MainPage));
+            }
+
         }
 
         private void button_Click(object sender, RoutedEventArgs e)

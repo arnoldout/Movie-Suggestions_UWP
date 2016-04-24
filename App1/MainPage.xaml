@@ -49,6 +49,7 @@
         <Grid Grid.Row="2">
             <ComboBox x:Name="ddlName" RelativePanel.Below="tbName" HorizontalAlignment="Center" VerticalAlignment="Top" Width="108"  Visibility="Collapsed" SelectionChanged="ddlName_SelectionChanged"/>
             <ProgressRing HorizontalAlignment="Center" x:Name="pBarMainPage" Height="50"  Width="50" VerticalAlignment="Top" Foreground="Black"/>
+            <TextBlock x:Name="errorMessage" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top" Visibility="Collapsed"></TextBlock>
         </Grid>
     </Grid>
 </Page>

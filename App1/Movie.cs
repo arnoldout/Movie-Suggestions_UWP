@@ -15,6 +15,7 @@ namespace App1
         String overview;
         String releaseDate;
         String voteAvg;
+        int suggestionScore;
 
         public Movie(int id, string poster, string title, string overview, string releaseDate, string voteAvg, String backDrop)
         {
@@ -25,6 +26,18 @@ namespace App1
             this.releaseDate = releaseDate;
             this.voteAvg = voteAvg;
             this.backDrop = backDrop;
+
+        }
+        public Movie(int id, string poster, string title, string overview, string releaseDate, string voteAvg, String backDrop, int suggestionScore)
+        {
+            this.id = id;
+            this.poster = poster;
+            this.title = title;
+            this.overview = overview;
+            this.releaseDate = releaseDate;
+            this.voteAvg = voteAvg;
+            this.backDrop = backDrop;
+            this.suggestionScore = suggestionScore;
         }
 
         public int Id
@@ -115,6 +128,19 @@ namespace App1
             set
             {
                 backDrop = value;
+            }
+        }
+
+        public int SuggestionScore
+        {
+            get
+            {
+                return suggestionScore;
+            }
+
+            set
+            {
+                suggestionScore = value;
             }
         }
     }

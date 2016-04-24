@@ -29,16 +29,22 @@ namespace App1
         public MainPage()
         {
             this.InitializeComponent();
-            
+            if(!App.errorMsg.Equals(""))
+            {
+                errorMessage.Visibility = Visibility.Visible;
+                errorMessage.Text = App.errorMsg;
+                App.errorMsg = "";
+            }
         }
 
         private async void button_Click(object sender, RoutedEventArgs e)
         {
+            errorMessage.Visibility = Visibility.Collapsed;
             ddlName.Items.Clear();
             ddlName.Visibility = Visibility.Collapsed;
             pBarMainPage.IsActive = true;
             string uri = "https://matchingsocks.herokuapp.com/search/movie/" + tbName.Text;
-                WebRequest wrGETURL = WebRequest.Create(uri);
+            WebRequest wrGETURL = WebRequest.Create(uri);
             wrGETURL.Proxy = null;
             try
             {
@@ -50,11 +56,10 @@ namespace App1
 
                 results = new List<Movie>();
                 
-                StringBuilder sb = new StringBuilder();
+                //StringBuilder sb = new StringBuilder();
                 foreach (dynamic results in movie)
                 {
                     this.results.Add(new Movie((int)results.id, System.Convert.ToString(results.poster_path), System.Convert.ToString(results.title), System.Convert.ToString(results.overview), System.Convert.ToString(results.release_date), System.Convert.ToString(results.vote_average), System.Convert.ToString(results.backdrop_path)));
-                    sb.Append(Convert.ToString(results.title) + "\n");
                 }
                 
                 ddlName.Visibility = Visibility.Visible;
@@ -73,10 +78,10 @@ namespace App1
 
                 response.Dispose();
             }
-            catch (Exception ex)
+            catch (WebException ex)
             {
-                String s = ex.Message;
-                s = s;
+                errorMessage.Visibility = Visibility.Visible;
+                errorMessage.Text = "Failed to connect to server\nPlease check your internet connection";
             }
             pBarMainPage.IsActive = false;
         }
@@ -96,21 +101,18 @@ namespace App1
         {
             goToResults(tbID.Text);
         }
-        public async void goToResults(String id)
+        public void goToResults(String id)
         {
+            errorMessage.Visibility = Visibility.Collapsed;
             try
             {
                 App.searchID = Convert.ToInt32(id);
                 this.Frame.Navigate(typeof(Results));
             }
-            catch (Exception ex)
+            catch (FormatException ex)
             {
-                var c = new ContentDialog()
-                {
-                    Title = ex.Message,
-                    PrimaryButtonText = "OK"
-                };
-                await c.ShowAsync();
+                errorMessage.Visibility = Visibility.Visible;
+                errorMessage.Text = "Failed to parse ID\nPlease enter valid number";
             }
         }
 

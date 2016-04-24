@@ -56,6 +56,16 @@
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Foreground" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
+      <RootProperty Name="Foreground" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Visibility" />
+      <RootProperty Name="TextWrapping" />
+      <RootProperty Name="Text" />
+      <RootProperty Name="FontWeight" />
+      <RootProperty Name="Inlines" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
       <RootProperty Name="Width" />
     </RootType>
@@ -97,15 +107,6 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Data.Binding">
       <RootProperty Name="ElementName" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
-      <RootProperty Name="TextWrapping" />
-      <RootProperty Name="Foreground" />
-      <RootProperty Name="Text" />
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="FontWeight" />
-      <RootProperty Name="Inlines" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
       <RootProperty Name="VerticalScrollBarVisibility" />
