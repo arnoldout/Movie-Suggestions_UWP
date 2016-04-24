@@ -34,28 +34,37 @@ namespace App1
         {
             pBarResultPage.IsActive = true;
             int rows;
-            await makeGETRequest();
-            MovieControl mc;
-            PivotItem p;
-            for (rows = 0; rows < results.Count; rows++)
+            try
             {
-                mc = new MovieControl();
-                //mc.textblockTitle = results[rows].Title;
-                mc.ImageSource = new BitmapImage(new Uri("https://image.tmdb.org/t/p/w396" + results[rows].Poster));
-                mc.textBlockOverview = results[rows].Overview;
-                mc.textblockRating = "Average Score: " + results[rows].VoteAvg;
-                mc.textBlockDate = "Release Date: " + results[rows].ReleaseDate;
+                await makeGETRequest();
 
-                mc.backSource = new BitmapImage(new Uri("https://image.tmdb.org/t/p/w396" + results[rows].BackDrop));
-                mc.SetValue(Grid.RowProperty, rows);
-                mc.HorizontalAlignment = HorizontalAlignment.Stretch;
-                p = new PivotItem();    
-                p.Header = results[rows].Title;
-                p.Foreground = new SolidColorBrush(Colors.White);
-                p.Content = mc;
-                pivoter.Items.Add(p);
+                MovieControl mc;
+                PivotItem p;
+                for (rows = 0; rows < results.Count; rows++)
+                {
+                    mc = new MovieControl();
+                    //mc.textblockTitle = results[rows].Title;
+                    mc.ImageSource = new BitmapImage(new Uri("https://image.tmdb.org/t/p/w396" + results[rows].Poster));
+                    mc.textBlockOverview = results[rows].Overview;
+                    mc.textblockRating = "Average Score: " + results[rows].VoteAvg;
+                    mc.textBlockDate = "Release Date: " + results[rows].ReleaseDate;
+
+                    mc.backSource = new BitmapImage(new Uri("https://image.tmdb.org/t/p/w396" + results[rows].BackDrop));
+                    mc.SetValue(Grid.RowProperty, rows);
+                    mc.HorizontalAlignment = HorizontalAlignment.Stretch;
+                    p = new PivotItem();
+                    p.Header = results[rows].Title;
+                    p.Foreground = new SolidColorBrush(Colors.White);
+                    p.Content = mc;
+                    pivoter.Items.Add(p);
+                }
+                pBarResultPage.IsActive = false;
             }
-            pBarResultPage.IsActive = false;
+            catch
+            {
+                App.errorMsg = "Server Timed out\nPlease try again";
+                this.Frame.Navigate(typeof(MainPage));
+            }
         }
 
         public async Task makeGETRequest()

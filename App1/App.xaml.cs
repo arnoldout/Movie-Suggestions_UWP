@@ -23,6 +23,7 @@ namespace App1
     /// 
     sealed partial class App : Application
     {
+        //global variables that make switching between pages easier
         public static int searchID;
         public static String errorMsg = "";
         /// <summary>
