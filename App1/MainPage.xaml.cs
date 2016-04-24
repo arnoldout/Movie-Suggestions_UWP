@@ -144,19 +144,7 @@ namespace App1
             //When the textbox gets focus, the current text is removed
             TextBox tb = (TextBox)sender;
             String s = tb.Text;
-            
             tb.Text = "";
-         
-        }
-
-        private void tbID_GotFocus(object sender, RoutedEventArgs e)
-        {
-            TextBox tb = (TextBox)sender;
-            String s = tb.Text;
-            if (tb.Text.Equals("ID: "))
-            {
-                tb.Text = "";
-            }
         }
     }
 }
