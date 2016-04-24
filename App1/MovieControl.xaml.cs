@@ -26,6 +26,7 @@ namespace SuggestionsApp
             userControl.BorderBrush = new SolidColorBrush(Colors.Gray);
         }
 
+        //creating getters and setters for all of the controls, allows for changing various control values
         public String textblockTitle
         {
             get { return (String)GetValue(textblockTitleProperty); }

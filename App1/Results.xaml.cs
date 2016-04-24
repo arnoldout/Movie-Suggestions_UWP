@@ -30,16 +30,27 @@ namespace App1
         {
             this.InitializeComponent();
         }
+        /*
+         *  When the results page is navigated to, a get request is sent to the Heroku server containing the ID of the selected movie.
+         */
         protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
             pBarResultPage.IsActive = true;
             int rows;
             try
             {
+                //makes a get request to the heroku server, sets up the global variable results
                 await makeGETRequest();
 
                 MovieControl mc;
                 PivotItem p;
+                /*
+                    Loops through every movie object in results.
+                    Creates a MovieControl with the data from the current Movie object.
+                    Also adding a pivot item, setting its content to the MovieControl
+                        setting its header to the name of the movie. 
+                    Add the pivot item to the XAML pivot control
+                */
                 for (rows = 0; rows < results.Count; rows++)
                 {
                     mc = new MovieControl();
@@ -62,6 +73,7 @@ namespace App1
             }
             catch
             {
+                //If the get request times out, display the error message on the mainpage, return to the mainpage
                 App.errorMsg = "Server Timed out\nPlease try again";
                 this.Frame.Navigate(typeof(MainPage));
             }
@@ -69,6 +81,10 @@ namespace App1
 
         public async Task makeGETRequest()
         {
+            /*
+                Make a get request to the heroku server. Read in the returned json. 
+                Create movie objects from json. Store movie objects in results. 
+            */
             string uri = "http://localhost:4567/request/movie/" + App.searchID;
             WebRequest wrGETURL = WebRequest.Create(uri);
             wrGETURL.Proxy = null;
@@ -96,6 +112,7 @@ namespace App1
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
+            //on cick, go back to mainPage
             this.Frame.Navigate(typeof(MainPage));
         }
     }
