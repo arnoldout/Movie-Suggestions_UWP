@@ -25,11 +25,18 @@
                 <ColumnDefinition Width="5*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0" >
-                <TextBox x:ConnectionId='6' x:Name="tbID" HorizontalAlignment="Center" TextWrapping="Wrap" Text="ID:" VerticalAlignment="Bottom"                                    Width="84" Background="{ThemeResource AppBarItemPressedForegroundThemeBrush}" SelectionHighlightColor="{ThemeResource AppBarBorderThemeBrush}"                         />
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*"></RowDefinition>
+                    <RowDefinition Height="7*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row ="1">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Padding="0,0,0,20" Foreground="White">Enter ID:</TextBlock>
+                    <TextBox x:ConnectionId='8' x:Name="tbID" HorizontalAlignment="Center" TextWrapping="Wrap" Text="ID:" VerticalAlignment="Bottom"                                    Width="84" Background="{ThemeResource AppBarItemPressedForegroundThemeBrush}" SelectionHighlightColor="{ThemeResource AppBarBorderThemeBrush}"                           />
+                </Grid>
             </Grid>
             <Grid Grid.Column="1">
 
-                <Button x:ConnectionId='5' x:Name="btnID" Content="Suggest" HorizontalAlignment="Center" VerticalAlignment="Bottom"                     RenderTransformOrigin="-2.496,0.495" Background="{ThemeResource AppBarBorderThemeBrush}"/>
+                <Button x:ConnectionId='7' x:Name="btnID" Content="Suggest" HorizontalAlignment="Center" VerticalAlignment="Bottom"                     RenderTransformOrigin="-2.496,0.495" Background="{ThemeResource AppBarBorderThemeBrush}"/>
 
             </Grid>
         </Grid>
@@ -39,16 +46,24 @@
                 <ColumnDefinition Width="3*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
-                <TextBox x:ConnectionId='4' x:Name="tbName" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Name: " VerticalAlignment="Center"                                   Width="98" SelectionHighlightColor="{ThemeResource AppBarBorderThemeBrush}"                           />
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*"></RowDefinition>
+                    <RowDefinition Height="7*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row ="1">
+                    <TextBlock x:ConnectionId='5' x:Name="lblName" HorizontalAlignment="Center" Padding="0,0,0,20" VerticalAlignment="Center" Foreground="White">Enter Movie Name: </TextBlock>
+                    <TextBox x:ConnectionId='6' x:Name="tbName" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Name: " VerticalAlignment="Bottom"                                   Width="98" SelectionHighlightColor="{ThemeResource AppBarBorderThemeBrush}"                           />
+                </Grid>
             </Grid>
             <Grid Grid.Column="1">
-                <Button x:ConnectionId='3' x:Name="btnName" Content="Search" HorizontalAlignment="Center" VerticalAlignment="Center"                      RenderTransformOrigin="-2.496,0.495" Background="{ThemeResource AppBarBorderThemeBrush}" />
+                <Button x:ConnectionId='4' x:Name="btnName" Content="Search" HorizontalAlignment="Center" VerticalAlignment="Bottom"                      RenderTransformOrigin="-2.496,0.495" Background="{ThemeResource AppBarBorderThemeBrush}" />
             </Grid>
             
         </Grid>
         <Grid Grid.Row="2">
             <ComboBox x:ConnectionId='1' x:Name="ddlName" RelativePanel.Below="tbName" HorizontalAlignment="Center" VerticalAlignment="Top" Width="108"  Visibility="Collapsed"                                            />
             <ProgressRing x:ConnectionId='2' HorizontalAlignment="Center" x:Name="pBarMainPage" Height="50"  Width="50" VerticalAlignment="Top" Foreground="Black"/>
+            <TextBlock x:ConnectionId='3' x:Name="errorMessage" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top" Visibility="Collapsed"></TextBlock>
         </Grid>
     </Grid>
 </Page>
