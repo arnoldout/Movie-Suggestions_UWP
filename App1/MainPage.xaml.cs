@@ -103,7 +103,15 @@ namespace App1
 
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            
+            TextBox tb = (TextBox)sender;
+            if (tb.Text.Length>10)
+            {
+                lblName.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                lblName.Visibility = Visibility.Visible;
+            }
         }
 
         private void ddlName_SelectionChanged(object sender, SelectionChangedEventArgs e)

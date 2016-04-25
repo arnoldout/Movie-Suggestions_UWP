@@ -85,7 +85,7 @@ namespace App1
                 Make a get request to the heroku server. Read in the returned json. 
                 Create movie objects from json. Store movie objects in results. 
             */
-            string uri = "http://localhost:4567/request/movie/" + App.searchID;
+            string uri = "https://matchingsocks.herokuapp.com/request/movie/" + App.searchID;
             WebRequest wrGETURL = WebRequest.Create(uri);
             wrGETURL.Proxy = null;
             try

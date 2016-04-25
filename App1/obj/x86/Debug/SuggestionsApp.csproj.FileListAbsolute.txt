@@ -204,3 +204,4 @@ C:\Users\Olivr\Documents\Visual Studio 2015\Projects\App1\App1\obj\x86\Debug\qua
 C:\Users\Olivr\Documents\Visual Studio 2015\Projects\App1\App1\obj\x86\Debug\qualifiers.txt.intermediate
 C:\Users\Olivr\Documents\Visual Studio 2015\Projects\App1\App1\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\Olivr\Documents\Visual Studio 2015\Projects\App1\App1\obj\x86\Debug\ProjectArchitectures.txt
+C:\Users\Olivr\Documents\Visual Studio 2015\Projects\App1\App1\obj\x86\Debug\SuggestionsApp.csprojResolveAssemblyReference.cache
