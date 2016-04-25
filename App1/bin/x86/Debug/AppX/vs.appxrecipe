@@ -10,7 +10,7 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>0c15527a-51ae-4c97-b052-9ab1844d0c24</PackageIdentityName>
     <IntermediateOutputPath>C:\Users\Olivr\Documents\Visual Studio 2015\Projects\App1\App1\obj\x86\Debug\</IntermediateOutputPath>
-    <RegisteredManifestChecksum>0EC9C9672E0B5DD8FF2D4D51464FA0D5A4A3421860817D1680D6BC7A6F837611</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>37C78AC78C55720CD7654240B682F1C981D7D24AB29C7F10B7A4D833406F3A82</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>0c15527a-51ae-4c97-b052-9ab1844d0c24_1.0.0.0_x86__vxsd0nwhftwqa</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>0c15527a-51ae-4c97-b052-9ab1844d0c24_vxsd0nwhftwqa!App</RegisteredUserModeAppID>
     <RegisteredPackageID>0c15527a-51ae-4c97-b052-9ab1844d0c24</RegisteredPackageID>
@@ -22,7 +22,7 @@
     <AppXManifest Include="C:\Users\Olivr\Documents\Visual Studio 2015\Projects\App1\App1\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-04-25T12:49:59.004</Modified>
+      <Modified>2016-04-25T15:03:02.249</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -510,11 +510,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Olivr\Documents\Visual Studio 2015\Projects\App1\App1\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-04-25T12:49:11.671</Modified>
+      <Modified>2016-04-25T15:03:01.822</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Olivr\Documents\Visual Studio 2015\Projects\App1\App1\bin\x86\Debug\Core\App1.exe">
       <PackagePath>App1.exe</PackagePath>
-      <Modified>2016-04-25T12:49:59.002</Modified>
+      <Modified>2016-04-25T15:03:02.243</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
